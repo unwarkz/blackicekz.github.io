@@ -91,7 +91,8 @@
             }
         }
 
-        trigger.addEventListener("click", toggleModal);
+        if (trigger)
+            trigger.addEventListener("click", toggleModal);
         closeButton.addEventListener("click", toggleModal);
         window.addEventListener("click", windowOnClick);
         window.addEventListener("keyup", pressEsc);
@@ -224,6 +225,17 @@
         }
     };
 
+    function ssGoogleMap() {
+        const hackerspaceLocationElement = document.getElementById("hackerspace_location")
+        const geoUrl = hackerspaceLocationElement.href;
+        const match = geoUrl.match(/geo:([0-9.,]+)(;u=\d+)?/);
+        const googleMapsUrl = `https://www.google.com/maps?q=${match[1]}`;
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (googleMapsUrl && !isMobile) {
+            hackerspaceLocationElement.href = googleMapsUrl;
+            hackerspaceLocationElement.target = "_blank";
+        }
+    };
 
    /* initialize
     * ------------------------------------------------------ */
@@ -239,7 +251,7 @@
         ssSmoothScroll();
         ssBackToTop();
         ssAjaxChimp();
-
+        ssGoogleMap();
     })();
 
 })(jQuery);

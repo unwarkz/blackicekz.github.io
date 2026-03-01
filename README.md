@@ -1,2 +1,11 @@
-# kindle-friendly-website
-Useful pages for space's Kindle
+# Вебсайт Blackice.KZ
+
+Мы — независимая лаборатория и сообщество IT энтузиастов в Алматы.
+
+## Вклад
+
+Инструкции как запустить на Windows
+
+```shell
+npx http-server .
+```
