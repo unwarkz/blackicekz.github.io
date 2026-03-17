@@ -104,6 +104,7 @@
     var t = translations[lang];
     if (!t) return;
 
+    // Translations are static/hardcoded strings (not user input), safe to use innerHTML for HTML tags like <br>, <b>, <a>
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       var key = el.getAttribute('data-i18n');
       if (t[key] !== undefined) {
@@ -115,6 +116,10 @@
     document.querySelectorAll('.lang-btn').forEach(function(btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
     });
+
+    // Update document lang attribute for accessibility / screen readers
+    var langMap = { ru: 'ru', en: 'en', kz: 'kk' };
+    document.documentElement.lang = langMap[lang] || lang;
 
     localStorage.setItem('bi_lang', lang);
   }

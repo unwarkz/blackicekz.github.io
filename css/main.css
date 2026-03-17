@@ -3049,8 +3049,8 @@ html.no-csstransitions .intro-content__bottom {
 }
 
 .gallery-caption .btn--stroke:hover {
-  background: #bf1523;
-  border-color: #bf1523;
+  background: #bf1523 !important;
+  border-color: #bf1523 !important;
   color: #ffffff;
 }
 
