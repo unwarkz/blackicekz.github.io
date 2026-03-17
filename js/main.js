@@ -77,6 +77,8 @@
         const trigger = document.querySelector(".modal-trigger");
         const closeButton = document.querySelector(".modal__close");
 
+        if (!modal || !closeButton) return;
+
         function toggleModal() {
             modal.classList.toggle("show-modal");
         }
@@ -227,6 +229,7 @@
 
     function ssGoogleMap() {
         const hackerspaceLocationElement = document.getElementById("hackerspace_location")
+        if (!hackerspaceLocationElement) return;
         const geoUrl = hackerspaceLocationElement.href;
         const match = geoUrl.match(/geo:([0-9.,]+)(;u=\d+)?/);
         const googleMapsUrl = `https://www.google.com/maps?q=${match[1]}`;

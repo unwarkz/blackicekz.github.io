@@ -8,6 +8,9 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/main.css">
@@ -45,11 +48,17 @@
             <a href="https://t.me/blackicehackerspace" target="_blank">@blackicehackerspace</a>
         </div>
 
+        <div class="header-lang">
+            <button class="lang-btn active" data-lang="ru">RU</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="kz">KZ</button>
+        </div>
+
     </header>
 
-    <section id="intro" class="s-intro s-intro--particles">
+    <section id="intro" class="s-intro s-intro--glitch">
 
-        <div id="particles-js" class="intro-particles"></div>
+        <canvas id="glitch-canvas" class="intro-glitch"></canvas>
 
         <div class="grid-overlay">
             <div></div>
@@ -61,13 +70,13 @@
 
                 <div class="intro-content__text">
 
-                    <h3>
+                    <h3 data-i18n="intro.tag">
                     ХАКЕРСПЕЙС
                     </h3>
                     
-                    <h1>
+                    <h1 data-i18n="intro.heading">
                     Мы — независимая лаборатория <br>
-                    и сообщество IT энтузиастов в Алматы.  <br>
+                    и сообщество IT энтузиастов в Алматы.
                     </h1>
 
                 </div> <!-- end intro-content__text -->
@@ -76,10 +85,10 @@
 
                     <div class="intro-content__notify">
                         <button type="button" class="btn--stroke btn--small" onclick="window.open('https://t.me/blackicechat')">
-                            Присоединиться
+                            <span data-i18n="intro.join">Присоединиться</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12l-9-9v7h-15v4h15v7z"/></svg>
                         </button>
-                    </div> <!-- end intro-content__notify -->
+                    </div><!-- end intro-content__notify -->
     
                 </div> <!-- end intro-content__bottom -->
 
@@ -119,11 +128,36 @@
 
         <div class="intro-scroll">
             <a href="#info" class="scroll-link smoothscroll">
-                Листай ниже
+                <span data-i18n="intro.scroll">Листай ниже</span>
             </a>
-        </div> <!-- end intro scroll -->
+        </div><!-- end intro scroll -->
 
     </section> <!-- end s-intro -->
+
+    <!-- gallery
+    ================================================== -->
+    <section id="gallery" class="s-gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item gallery-item--large">
+                <img src="images/museum/image.png" alt="Музей ретро-консолей">
+            </div>
+            <div class="gallery-item">
+                <img src="images/museum/image%20copy.png" alt="Ретро консоли">
+            </div>
+            <div class="gallery-item">
+                <img src="images/museum/image%20copy%202.png" alt="Коллекция консолей">
+            </div>
+            <div class="gallery-item">
+                <img src="images/museum/image%20copy%203.png" alt="Nintendo Famicom">
+            </div>
+            <div class="gallery-item">
+                <img src="images/museum/image%20copy%204.png" alt="Sega Genesis">
+            </div>
+        </div>
+        <div class="gallery-caption">
+            <a href="museum.html" class="btn btn--stroke" data-i18n="gallery.museum_link">Музей ретро-консолей →</a>
+        </div>
+    </section> <!-- end s-gallery -->
 
     <!-- info
     ================================================== -->
@@ -161,7 +195,7 @@
 
                         <div class="row tab-content__item-header">
                             <div class="column">
-                                <h1>Привет. Это Черный лёд.</h1>
+                                <h1 data-i18n="about.heading">Привет. Это Черный лёд.</h1>
                             </div>
                         </div>
 
@@ -211,7 +245,7 @@
 
                         <div class="row tab-content__item-header">
                             <div class="column">
-                                <h1>Как это работает.</h1>
+                                <h1 data-i18n="services.heading">Как это работает.</h1>
                             </div>
                         </div>
 
@@ -225,7 +259,7 @@
 
                         <div class="row tab-content__item-header">
                             <div class="column">
-                                <h1>Принципы сообщества.</h1>
+                                <h1 data-i18n="services.principles_heading">Принципы сообщества.</h1>
                             </div>
                         </div>
                         <div class="row services-list block-large-1-2 block-medium-1-2 block-tab-full">
@@ -265,7 +299,7 @@
 
                         <div class="row tab-content__item-header">
                             <div class="column">
-                                <h1>Как стать участником.</h1>
+                                <h1 data-i18n="contact.heading">Как стать участником.</h1>
                             </div>
                         </div>
 
@@ -279,7 +313,7 @@
 
                                     <div class="column services-list__item">
                                         <div class="services-list__item-content">
-                                            <h4 class="item-title">Гостевой визит</h4>
+                                            <h4 class="item-title" data-i18n="contact.guest_title">Гостевой визит</h4>
                                             <p>
                                             Приходите к нам на <b>День открытых дверей</b> или на любой открытый воркшоп или митап. Посмотрите атмосферу, познакомьтесь с резидентами. Обо всех мероприятиях мы сообщаем в своих социальных сетях, в первую очередь в <a href="https://t.me/blackicehackerspace">Telegram канале</a>.
                                             </p>
@@ -288,7 +322,7 @@
                         
                                     <div class="column services-list__item">
                                         <div class="services-list__item-content">
-                                            <h4 class="item-title">Резидентство (Membership)</h4>
+                                            <h4 class="item-title" data-i18n="contact.membership_title">Резидентство (Membership)</h4>
                                             <p>
                                             Постоянный доступ к хакерспейсу и оборудованию.
                                             </p>
@@ -304,7 +338,7 @@
 
                                 <div class="row">
                                     <div class="column large-six tab-full">
-                                        <h4>Как нас найти</h4>
+                                        <h4 data-i18n="contact.find_us">Как нас найти</h4>
                 
                                         <p>
                                         <a id="hackerspace_location" href="geo:43.261875929569364,76.94980156192594;u=35">ул. Жибек-Жолы 66\1</a><br>
@@ -315,7 +349,7 @@
                                     </div>
                 
                                     <div class="column large-six tab-full">
-                                        <h4>Социальные сети</h4>
+                                        <h4 data-i18n="contact.social">Социальные сети</h4>
                 
                                         <ul class="link-list">
                                             <li><a href="https://t.me/blackicehackerspace" target="_blank">Telegram</a></li>
@@ -344,7 +378,7 @@
                 <footer>
 
                     <div class="ss-copyright">
-                        <span>© Copyright Black Ice 2024 — forever</span>
+                        <span data-i18n="footer.copyright">© Copyright Black Ice 2024 — forever</span>
                     </div>
 
                     <div class="ss-go-top">
@@ -364,9 +398,9 @@
     ================================================== -->
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/particles.min.js"></script>
-    <script src="js/particle-settings.js"></script>
+    <script src="js/glitch.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
 
 
 </body>
